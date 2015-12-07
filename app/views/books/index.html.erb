@@ -1,11 +1,19 @@
 <!-- <h3><a href="<%= new_book_path %>">Add a book</a></h3> -->
-
+<h1>Welcome to Book Club</h1>
+<h3>Brought to you by the Rochester-Portland Correspondence Society</h3>
 <% @books.each do |book| %>
 
 <ul>
-  <li><a href="/books/<%=book.id %>"><%= book.title %></a></li>
+  <li><a href="/books/<%=book.id %>"><img src="<%= book.book_cover %>">"</a></li>
+  <li><%= book.title %></li>
   <li><%= book.author %></li>
-  <li><%= book.book_cover %></li>
-  <li><%= book.list_num %></li>
 </ul>
 <% end %>
+
+<h4>List of Books</h4>
+<% @books_list.each do |book| %>
+<ul>
+  <li><%= book.list_num %>: <a href="/books/<%=book.id %>"><%= book.title %></a></li>
+</ul>
+<% end %>
+<h3><a href="<%= new_book_path %>">Add a book</a></h3>

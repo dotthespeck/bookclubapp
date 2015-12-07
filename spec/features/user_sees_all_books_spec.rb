@@ -8,9 +8,8 @@ feature "User sees all books" do
 #
 #   Acceptance Criteria
 #
-#   [] I must see the title of each book
-#   [] I must see the description of each book
-#   [] I must see the cover of each book
+#   [X] I must see the title of each book
+#   [X] I must see the cover of each book
 #   [] I must see books listed in order by list number
 # )
 
@@ -19,10 +18,10 @@ feature "User sees all books" do
     book = FactoryGirl.create(:book)
     visit root_path
 
-    expect(page).to have_content "#{book.title}"
-    expect(page).to have_content "#{book.author}"
-    expect(page).to have_content "#{book.book_cover}"
-    expect(page).to have_content "#{book.list_num}"
+    expect(page).to have_content book.title
+    expect(page).to have_content book.author
+    #expect(page).to have_xpaths("//img[contains(@src, \"#{image}\")]")
+    expect(page).to have_content book.list_num
     end
   end
 
