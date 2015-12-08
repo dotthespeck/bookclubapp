@@ -18,11 +18,37 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to root_path, :notice => "Book was successfully created"
+      redirect_to root_path, :notice => "Book created successfully"
     else
       render :new
     end
   end
+
+  def edit
+      @book = Book.find(params[:id])
+    end
+
+    def update
+      @book = Book.find(params[:id])
+      @book.update(book_params)
+
+      if @book.update_attributes(book_params)
+        redirect_to root_path, notice: "Book information updated successfully"
+      else
+        render :edit, notice: "Book information did not update"
+      end
+    end
+
+    def destroy
+      @book = Book.find(params[:id])
+      @book.destroy
+
+      if @book.destroy
+        redirect_to root_path, notice: "Book was successfully deleted"
+      else
+        render :edit, notice: "Book was not deleted"
+      end
+    end
 
   private
   def book_params

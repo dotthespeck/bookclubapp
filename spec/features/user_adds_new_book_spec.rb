@@ -28,6 +28,6 @@ feature "user adds a book" do
    fill_in "List Number", with: book.list_num
    click_on "Create Book"
 
-  expect(page).to have_content "Book was successfully created"
+  expect(page).to have_content "Book created successfully"
   end
 end
