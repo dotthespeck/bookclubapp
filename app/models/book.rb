@@ -1,6 +1,6 @@
 class Book < ActiveRecord::Base
 
-#has_many :comments, dependent: :destroy
+has_many :topics, dependent: :destroy
 
 validates :title, length: { minimum: 2 }
 validates :author, length: { minimum: 2 }
