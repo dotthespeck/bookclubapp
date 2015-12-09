@@ -6,7 +6,7 @@
 
   <h2>Discussions</h2>
     <% @book.topics.each do |t| %>
-      <h3><%= t.title %></h3>
+      <h3><a href="<%=book_topic_path(@book.id, t.id)%>"><%= t.title %></a></h3>
     <% end %>
 
 
