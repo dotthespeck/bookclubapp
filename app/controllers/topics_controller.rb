@@ -15,7 +15,7 @@ class TopicsController < ApplicationController
     @topic.book_id = @book.id
 
     if @topic.save
-      redirect_to root_path, notice: "Topic created successfully"
+      redirect_to book_path(@book.id), notice: "Topic created successfully"
     else
       render :new
     end

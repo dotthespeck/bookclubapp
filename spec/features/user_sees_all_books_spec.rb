@@ -1,18 +1,6 @@
 require "rails_helper"
 
 feature "User sees all books" do
-#    %q(
-#   As a user
-#   I want to view recently posted books
-#   So that I can see what others are reading
-#
-#   Acceptance Criteria
-#
-#   [X] I must see the title of each book
-#   [X] I must see the cover of each book
-#   [] I must see books listed in order by list number
-# )
-
   scenario "User sees all the books" do
 
     book = FactoryGirl.create(:book)

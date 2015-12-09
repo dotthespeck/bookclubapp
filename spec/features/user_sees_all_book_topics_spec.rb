@@ -1,16 +1,6 @@
 require "rails_helper"
 
 feature "User sees all topics for a book" do
-#    %q(
-#   As a user
-#   I want to view topics
-#   So that I can see what others are talking about
-#
-#   Acceptance Criteria
-#
-#   [X] I must see the topics for each book
-# )
-
   scenario "User sees all the topics for a book" do
 
     book = FactoryGirl.create(:book)
