@@ -16,7 +16,7 @@ feature "User visits topic page" do
     book = FactoryGirl.create(:book)
     topic = FactoryGirl.create(:topic, book: book)
 
-    visit "books/#{book.id}"
+    visit book_path(book.id)
     click_on topic.title
 
     expect(page).to have_content topic.title

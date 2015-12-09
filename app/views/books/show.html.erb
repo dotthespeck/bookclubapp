@@ -6,8 +6,8 @@
 
   <h2>Discussions</h2>
     <% @book.topics.each do |t| %>
-      <h3><a href="<%=book_topic_path(@book.id, t.id)%>"><%= t.title %></a></h3>
+      <h3><a id="topic" href="<%=book_topic_path(@book.id, t.id)%>"><%= t.title %></a></h3>
     <% end %>
 
-
+<a id="new_topic" href="<%=new_book_topic_path(@book.id)%>">Add a topic</a>
 <a id="edit" href="/books/<%=@book.id%>/edit">Edit Book Information</a>
