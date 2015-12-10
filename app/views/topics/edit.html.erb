@@ -1,0 +1,11 @@
+<%= form_for([@book, @topic]) do |f| %>
+
+<div class="field">
+  <%= f.label :title, "Title" %><br />
+  <%= f.text_field :title %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

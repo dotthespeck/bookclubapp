@@ -26,18 +26,18 @@ class BooksController < ApplicationController
 
   def edit
       @book = Book.find(params[:id])
-    end
+  end
 
-    def update
-      @book = Book.find(params[:id])
-      @book.update(book_params)
+  def update
+    @book = Book.find(params[:id])
+    @book.update(book_params)
 
-      if @book.update_attributes(book_params)
-        redirect_to root_path, notice: "Book information updated successfully"
-      else
-        render :edit, notice: "Book information did not update"
-      end
+    if @book.update_attributes(book_params)
+      redirect_to root_path, notice: "Book information updated successfully"
+    else
+      render :edit, notice: "Book information did not update"
     end
+  end
 
     def destroy
       @book = Book.find(params[:id])

@@ -21,6 +21,23 @@ class TopicsController < ApplicationController
     end
   end
 
+  def edit
+    @book = Book.find(params[:book_id])
+    @topic = Topic.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:book_id])
+    @topic = Topic.find(params[:id])
+    @topic.update(topic_params)
+
+    if @topic.update_attributes(topic_params)
+      redirect_to root_path, notice: "Topic updated successfully"
+    else
+      render :edit, notice: "Topic did not update"
+    end
+  end
+
   private
     def topic_params
       params.require(:topic).permit(:title, :book_id)
