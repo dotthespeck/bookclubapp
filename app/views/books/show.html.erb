@@ -7,6 +7,12 @@
   <h2>Discussions</h2>
     <% @book.topics.each do |t| %>
       <h3><a id="topic" href="<%=book_topic_path(@book.id, t.id)%>"><%= t.title %></a></h3>
+      <% comments = Comment.order(updated_at: :desc).limit(1).where(:topic_id == t.id) %>
+      <% if comments %>
+        <% comments.each do |c| %>
+          <h4><%= c.comment %></h4>
+          <% end %>
+      <% end %>
       <h5><a href="<%=edit_book_topic_path(@book.id, t.id)%>">Edit topic</a></h5>
     <% end %>
 
