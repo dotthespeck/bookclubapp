@@ -38,6 +38,18 @@ class TopicsController < ApplicationController
     end
   end
 
+  def destroy
+    @book = Book.find(params[:book_id])
+    @topic = Topic.find(params[:id])
+    @topic.destroy
+
+    if @topic.destroy
+      redirect_to book_path(@book.id), notice: "Topic was successfully deleted"
+    else
+      render :edit, notice: "Topic was not deleted"
+    end
+  end
+
   private
     def topic_params
       params.require(:topic).permit(:title, :book_id)

@@ -9,3 +9,7 @@
   <%= f.submit %>
 </div>
 <% end %>
+
+<div>
+<%= button_to 'Delete', book_topic_path, method: 'delete', data: { confirm: 'Are you sure?' } %>
+</div>
