@@ -1,1 +1,7 @@
 <h1><%= @topic.title %></h1>
+
+  <% @topic.comments.each do |c| %>
+    <h2><%= c.comment %></h2>
+  <% end %>
+
+<a id="new_comment" href="<%=new_topic_comment_path(@topic.id)%>">Add a comment</a>

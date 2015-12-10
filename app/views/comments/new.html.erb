@@ -1,0 +1,17 @@
+<% if @comments %>
+  <% @comments.each do |c| %>
+    <h3><%= c.comment %>
+  <% end %>
+<% end %>
+
+<%= form_for([@topic, @comment]) do |f| %>
+
+<div class="field">
+  <%= f.label :comment, "Comment" %><br />
+  <%= f.text_field :comment %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
