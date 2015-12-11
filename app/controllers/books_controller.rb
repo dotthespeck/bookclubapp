@@ -2,8 +2,9 @@ class BooksController < ApplicationController
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   def index
-    @books = Book.all
-    @books_list = Book.all.order(list_num: :asc)
+    @featured_book = Book.featured_book
+    @future_books = Book.future_books
+    @past_books = Book.past_books
   end
 
   def show
@@ -52,6 +53,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title, :author, :book_cover, :list_num)
+    params.require(:book).permit(:title, :author, :book_cover, :list_num, :status)
   end
 end

@@ -1,18 +1,35 @@
-<h1>Welcome to Book Club</h1>
-<h3>Brought to you by the Rochester-Portland Correspondence Society</h3>
-<% @books.each do |book| %>
+<div id="header">
+  <%= image_tag "hand_left.jpg", class: 'left_hand' %>
+<h1 class="welcome">Welcome to Book Club</h1>
+  <%= image_tag "hand_right.jpg", class: 'right_hand' %>
+</div>
 
+<div>
+  <h4 class="spacing">Brought to you by the Rochester-Portland Correspondence Society</h4>
+</div>
+
+<div id="featured_book">
+<h1>Currently Reading...</h1>
 <ul>
+  <% @featured_book.each do |book| %>
   <li><a id="cover" href="/books/<%=book.id %>"><img src="<%= book.book_cover %>">"</a></li>
-  <li><%= book.title %></li>
-  <li><%= book.author %></li>
+</ul>
+<% end %>
+</div>
+
+<div id="other_books">
+<h1>Coming Up</h1>
+<% @future_books.each do |book| %>
+<ul>
+  <li><%=book.author%>: <a href="/books/<%=book.id %>"><%= book.title %></a></li>
 </ul>
 <% end %>
 
-<h4>List of Books</h4>
-<% @books_list.each do |book| %>
+<h1>Past Books</h1>
+<% @past_books.each do |book| %>
 <ul>
-  <li><%= book.list_num %>: <a href="/books/<%=book.id %>"><%= book.title %></a></li>
+  <%=book.author%>: <a href="/books/<%=book.id %>"><%= book.title %></a></li>
 </ul>
 <% end %>
 <h3><a href="<%= new_book_path %>">Add a book</a></h3>
+</div>

@@ -20,6 +20,8 @@
  <%= f.text_field :list_num %>
 </div>
 
+  <%= f.select :status, [['Featured','Featured'],['Coming up','Coming up'],['Done','Done']] %>
+
 <div class="actions">
   <%= f.submit %>
 </div>

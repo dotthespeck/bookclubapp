@@ -1,3 +1,52 @@
+#home_link {
+  float: right;
+}
+
+#header {
+  text-align: center;
+  padding-top: 45px;
+}
+
+#featured_book {
+  width: 50%;
+  float: left;
+  padding-left: 10px;
+}
+
+#other_books {
+  display: inline;
+  margin-left: 50px;
+}
+
+.welcome {
+  display: inline;
+  font-size: 48px;
+
+}
+.left_hand {
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.right_hand {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.spacing {
+  padding: 20px 0px;
+  text-align: center;
+}
+
 ul, li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #450075;
+}
+
+a:visited {
+  color: blue
 }
