@@ -22,6 +22,35 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+
+    if @comment.update_attributes(comment_params)
+      redirect_to topic_path(@topic.id), notice: "Comment updated successfully"
+    else
+      render :edit, notice: "Comment did not update"
+    end
+  end
+
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    if @comment.destroy
+      redirect_to topic_path(@topic.id), notice: "Comment was successfully deleted"
+    else
+      render :edit, notice: "Topic was not deleted"
+    end
+  end
+
   private
     def comment_params
       params.require(:comment).permit(:comment, :topic_id)
