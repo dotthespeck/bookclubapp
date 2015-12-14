@@ -1,13 +1,12 @@
-<div class="content">
   <div id="show_cover">
-  <img src="<%= @book.book_cover %>">
+  <img id="cover" src="<%= @book.book_cover %>">
   </div>
+  <br />
   <div id="show_info">
   <h1><%= @book.title %></h1>
   <h2><%= @book.author %></h2>
   <h4><a class="book_edit" href="/books/<%=@book.id%>/edit">Edit Book Information</a></h4>
   </div>
-</div>
 
 <br clear="all" />
 

@@ -1,5 +1,17 @@
 <%= form_for([@book, @topic]) do |f| %>
 
+<% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= "#{@topic.errors.count} error(s) prevented the topic from being edited:" %></h2>
+      <ul>
+        <% @topic.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
 <div class="field">
   <%= f.label :title, "Title" %><br />
   <%= f.text_field :title %>
@@ -7,9 +19,7 @@
 
 <div class="actions">
   <%= f.submit %>
-</div>
 <% end %>
 
-<div>
 <%= button_to 'Delete', book_topic_path, method: 'delete', data: { confirm: 'Are you sure?' } %>
 </div>

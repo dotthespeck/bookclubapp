@@ -1,15 +1,24 @@
 <%= form_for([@topic, @comment]) do |f| %>
 
+<% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= "#{@comment.errors.count} error(s) prevented the comment from being edited:" %></h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <div class="field">
   <%= f.label :comment, "Comment" %><br />
-  <%= f.text_field :comment %>
+  <%= f.text_area :comment %>
 </div>
 
 <div class="actions">
   <%= f.submit %>
-</div>
 <% end %>
 
-<div>
 <%= button_to 'Delete', topic_comment_path, method: 'delete', data: { confirm: 'Are you sure?' } %>
 </div>

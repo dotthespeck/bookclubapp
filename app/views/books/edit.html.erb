@@ -1,5 +1,16 @@
 <%= form_for @book, :url => { :action => "update" } do |f| %>
 
+<% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= "#{@book.errors.count} error(s) prevented the book from being edited:" %></h2>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <div class="field">
   <%= f.label :title, "Title" %><br />
   <%= f.text_field :title %>
@@ -20,11 +31,11 @@
  <%= f.text_field :list_num %>
 </div>
 
+  <%= f.select :status, [['Featured','Featured'],['Coming up','Coming up'],['Done','Done']] %>
+
 <div class="actions">
   <%= f.submit "Edit Book Information"%>
-</div>
 <% end %>
 
-<div>
-<%= button_to 'Delete', book_path, method: 'delete', data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Delete Book', book_path, method: 'delete', data: { confirm: 'Are you sure?' } %>
 </div>

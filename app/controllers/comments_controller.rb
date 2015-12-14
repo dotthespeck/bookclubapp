@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment.topic_id = @topic.id
 
     if @comment.save
-      redirect_to book_path(@topic.book_id), notice: "Comment created successfully"
+      redirect_to topic_path(@topic.id), notice: "Comment created successfully"
     else
       render :new
     end

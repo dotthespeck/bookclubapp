@@ -1,6 +1,10 @@
 body {
-  background-color: #F8FFFF;
   font-family: 'Neuton', serif;
+}
+
+.alert {
+  color: red;
+  font-size: 24px;
 }
 
 h1, h2, h3, h4 {
@@ -15,6 +19,65 @@ ul, li {
 
 a {
   text-decoration: none;
+}
+
+.field {
+  font-size: 24px;
+}
+
+label {
+  padding: 10px;
+}
+
+form {
+  padding-top: 30px;
+}
+
+input[type="text"] {
+  margin: 15px 0px;
+  padding: 10px 50px;
+  font-size: 14px;
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 2px 0 #707070;
+  transition: box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+
+textarea {
+  width: 75%;
+  height: 100px;
+  margin-top: 15px;
+  font-family: 'Neuton', serif;
+  font-size: 16px;
+}
+
+select {
+    margin: 15px 0px;
+    padding: 10px 25px;
+    font-family: 'Neuton', serif;
+    font-size: 18px;
+}
+
+input[type="submit"] {
+  margin: 15px 0px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-family: 'Neuton', serif;
+  background-color: white;
+  border: solid 3px #450075;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.button_to {
+  font-family: 'Neuton', serif;
+  font-size: 24px;
+  margin-left: 50px;
+  display: inline-block;
 }
 
 /*index page*/
@@ -78,15 +141,19 @@ a {
 #show_cover {
   margin-top: 40px;
   margin-left: 10px;
-  width: 40%;
   display: inline-block;
   float: left;
+}
+
+#cover {
+  max-width: 200px;
 }
 
 #show_info {
   width: 40%;
   display: inline-block;
-  margin-top: 60px;
+  margin: 40px 60px 0px 0px;
+  float: right;
 }
 
 .topics {
@@ -119,4 +186,28 @@ a {
 
 #topic_link {
   color: #BA8D63;
+}
+
+.topic_comment {
+  padding-top: 35px;
+}
+
+.show_comment {
+  display: inline;
+}
+
+.edit_comment {
+  display: inline;
+  margin: 15px;
+  color: #BA8D63
+}
+
+#new_comment {
+  margin: 15px;
+  font-size: 24px;
+  padding: 20px;
+}
+
+.comments_show {
+  padding: 30px;
 }

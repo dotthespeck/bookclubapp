@@ -1,8 +1,12 @@
+<div>
 <h1><%= @topic.title %></h1>
-
-  <% @topic.comments.each do |c| %>
-    <h2><%= c.comment %></h2>
-    <a id="edit_comment" href="<%=edit_topic_comment_path(@topic.id, c.id)%>">Edit comment</a>
-  <% end %>
-
 <a id="new_comment" href="<%=new_topic_comment_path(@topic.id)%>">Add a comment</a>
+</div>
+
+<div class="comments_show">
+  <% @topic.comments.each do |c| %>
+  <div>
+    <h2 class="show_comment"><%= c.comment %></h2>
+    <h5 class="edit_comment"><a class="edit_comment" href="<%=edit_topic_comment_path(@topic.id, c.id)%>">Edit comment</a></h5>
+  <% end %>
+</div>
