@@ -1,18 +1,30 @@
 <div class="content">
+  <div id="show_cover">
   <img src="<%= @book.book_cover %>">
+  </div>
+  <div id="show_info">
   <h1><%= @book.title %></h1>
-  <h2><%= @book.author %></h2
+  <h2><%= @book.author %></h2>
+  <h4><a class="book_edit" href="/books/<%=@book.id%>/edit">Edit Book Information</a></h4>
+  </div>
 </div>
 
-  <h2>Discussions</h2>
+<br clear="all" />
+
+<div class="topics">
+  <h1 class="discussion">Discussions</h1>
     <% @topics.each do |t| %>
-      <h3><a id="topic" href="<%=book_topic_path(@book.id, t.id)%>"><%= t.title %></a></h3>
+      <div class="book_comments">
+      <h2 class="topic_title"><a class="topic_title" href="<%=book_topic_path(@book.id, t.id)%>"><%= t.title %></a></h2>
+      <h5 class="topic_edit"><a class="topic_edit" href="<%=edit_book_topic_path(@book.id, t.id)%>">Edit topic</a></h5>
       <% comment = t.comments.last%>
       <% if comment %>
-        <h3><%= comment.comment %>
+        <h3><%= comment.comment %></h3>
       <% end %>
-      <h5><a href="<%=edit_book_topic_path(@book.id, t.id)%>">Edit topic</a></h5>
+    </div>
     <% end %>
+</div>
 
-<a id="new_topic" href="<%=new_book_topic_path(@book.id)%>">Add a topic</a>
-<a id="edit" href="/books/<%=@book.id%>/edit">Edit Book Information</a>
+<div id="new_topic">
+<h3><a id="topic_link" href="<%=new_book_topic_path(@book.id)%>">Add a topic</a></h3>
+</div>

@@ -1,5 +1,26 @@
+body {
+  background-color: #F8FFFF;
+  font-family: 'Neuton', serif;
+}
+
+h1, h2, h3, h4 {
+  color: #004C11;
+}
+
+ul, li {
+  list-style: none;
+  color: #450075;
+  font-size: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*index page*/
 #home_link {
   float: right;
+  color: #BA8D63;
 }
 
 #header {
@@ -16,12 +37,22 @@
 #other_books {
   display: inline;
   margin-left: 50px;
+  padding-top: 10px;
+}
+
+.books_index {
+  color: #450075;
 }
 
 .welcome {
   display: inline;
-  font-size: 48px;
+  font-size: 56px;
+  font-family: 'UnifrakturCook', cursive;
+  color: black;
+}
 
+.add_new_book {
+  color: #BA8D63;
 }
 .left_hand {
   margin-right: 15px;
@@ -33,20 +64,59 @@
   margin-top: 10px;
 }
 
+.future, .past {
+  padding: 20px;
+}
+
 .spacing {
   padding: 20px 0px;
   text-align: center;
 }
 
-ul, li {
-  list-style: none;
+/*show page */
+
+#show_cover {
+  margin-top: 40px;
+  margin-left: 10px;
+  width: 40%;
+  display: inline-block;
+  float: left;
 }
 
-a {
-  text-decoration: none;
+#show_info {
+  width: 40%;
+  display: inline-block;
+  margin-top: 60px;
+}
+
+.topics {
+  text-align: center;
+}
+
+.discussion {
+  padding-top: 15px;
+}
+
+.topic_title {
+  display: inline;
   color: #450075;
 }
 
-a:visited {
-  color: blue
+.book_edit {
+  color: #BA8D63;
+}
+
+.topic_edit {
+  display: inline;
+  padding-left: 15px;
+  color: #BA8D63;
+}
+
+#new_topic {
+  text-align: center;
+  padding-top: 10px;
+}
+
+#topic_link {
+  color: #BA8D63;
 }

@@ -5,7 +5,7 @@
 </div>
 
 <div>
-  <h4 class="spacing">Brought to you by the Rochester-Portland Correspondence Society</h4>
+  <h3 class="spacing">Brought to you by the Rochester-Portland Correspondence Society</h3>
 </div>
 
 <div id="featured_book">
@@ -18,18 +18,23 @@
 </div>
 
 <div id="other_books">
-<h1>Coming Up</h1>
-<% @future_books.each do |book| %>
-<ul>
-  <li><%=book.author%>: <a href="/books/<%=book.id %>"><%= book.title %></a></li>
-</ul>
-<% end %>
+<div class="future">
+  <h1>Coming Up</h1>
+  <% @future_books.each do |book| %>
+  <ul>
+    <li><a class="books_index" href="/books/<%=book.id %>"><%=book.author%>: <%= book.title %></a></li>
+  </ul>
+  <% end %>
+</div>
 
+<div class="past">
 <h1>Past Books</h1>
 <% @past_books.each do |book| %>
 <ul>
-  <%=book.author%>: <a href="/books/<%=book.id %>"><%= book.title %></a></li>
+  <li><a class="books_index" href="/books/<%=book.id %>"><%=book.author%>: <%= book.title %></a></li>
 </ul>
 <% end %>
-<h3><a href="<%= new_book_path %>">Add a book</a></h3>
+</div>
+
+<h3><a class="add_new_book" href="<%= new_book_path %>">Add a book</a></h3>
 </div>
